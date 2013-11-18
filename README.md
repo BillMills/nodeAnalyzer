@@ -17,7 +17,7 @@ In order to use/develop nodeAnalyzer, you'll need three things:
 
 use
 ============
-The example C++ code lives in hello.cc.  A single method called Method is decalred, which just returns its first argument.
+The example C++ code lives in hello.cc.  Two methods called FirstMethod and SecondMethod are decalred, to show how to make a list of methods; binding.gyp contains the 'Makefile - like' directives for mashing these into the JavaScript.
 
 To see it go, check the package out and in its root directory, do
 
