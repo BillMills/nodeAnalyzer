@@ -7,9 +7,20 @@ http://nodejs.org/api/addons.html
 and
 http://howtonode.org/hello-node
 
+After installing node, the simplest (and probably most useful) example is in callAbin.js.  Just start the server:
+node callAbin.js
+
+then visit the URL
+http://localhost:8000/?command=a.out
+
+with a.out replaced with your executable.  Output should appear in the bowser.
+
+C++ wrapped in node
+============
+
 setup
 ============
-In order to use/develop nodeAnalyzer, you'll need three things:
+In order to use/develop nodeAnalyzer with C++ wrapping, you'll need three things:
 
 1. node: http://nodejs.org/
 2. npm (node package manager): https://npmjs.org/
