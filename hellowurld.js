@@ -2,7 +2,7 @@ var http = require('http');
 var url = require('url');
 var addon = require('./build/Release/hello');
 
-// Configure our HTTP server to respond with Hello World to all requests.
+// Scrape a couple parameters out of the query string, pass them to C++, and print the return plus some other stuff to the DOM:
 var server = http.createServer(function (request, response) {
   var queryData = url.parse(request.url, true).query;
   response.writeHead(200, {"Content-Type": "text/plain"});
