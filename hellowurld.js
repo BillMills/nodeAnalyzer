@@ -7,7 +7,7 @@ var server = http.createServer(function (request, response) {
   var queryData = url.parse(request.url, true).query;
   response.writeHead(200, {"Content-Type": "text/plain"});
 
-  response.end(queryData.fxn + "({message:'"+addon.hello(queryData.payload)+"'})");
+  response.end(queryData.fxn + "({message:'"+addon.hello(queryData.payload)+", "+addon.helloAgain()+"'})");
 });
 
 // Listen on port 8000, IP defaults to 127.0.0.1

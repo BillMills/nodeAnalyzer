@@ -332,10 +332,15 @@ ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
                  $(join ^,hello.target.mk)))),)
   include hello.target.mk
 endif
+ifeq ($(strip $(foreach prefix,$(NO_LOAD),\
+    $(findstring $(join ^,$(prefix)),\
+                 $(join ^,helloAgain.target.mk)))),)
+  include helloAgain.target.mk
+endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
-cmd_regen_makefile = cd $(srcdir); /usr/local/share/npm/lib/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "--toplevel-dir=." -I/Users/billmills/Desktop/node/build/config.gypi -I/usr/local/share/npm/lib/node_modules/node-gyp/addon.gypi -I/Users/billmills/.node-gyp/0.10.12/common.gypi "--depth=." "-Goutput_dir=." "--generator-output=build" "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/Users/billmills/.node-gyp/0.10.12" "-Dmodule_root_dir=/Users/billmills/Desktop/node" binding.gyp
-Makefile: $(srcdir)/../../.node-gyp/0.10.12/common.gypi $(srcdir)/../../../../usr/local/share/npm/lib/node_modules/node-gyp/addon.gypi $(srcdir)/build/config.gypi $(srcdir)/binding.gyp
+cmd_regen_makefile = cd $(srcdir); /usr/local/share/npm/lib/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "--toplevel-dir=." -I/Users/billmills/Desktop/TRIUMF/nodeAnalyzer/build/config.gypi -I/usr/local/share/npm/lib/node_modules/node-gyp/addon.gypi -I/Users/billmills/.node-gyp/0.10.12/common.gypi "--depth=." "-Goutput_dir=." "--generator-output=build" "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/Users/billmills/.node-gyp/0.10.12" "-Dmodule_root_dir=/Users/billmills/Desktop/TRIUMF/nodeAnalyzer" binding.gyp
+Makefile: $(srcdir)/../../../.node-gyp/0.10.12/common.gypi $(srcdir)/build/config.gypi $(srcdir)/binding.gyp $(srcdir)/../../../../../usr/local/share/npm/lib/node_modules/node-gyp/addon.gypi
 	$(call do_cmd,regen_makefile)
 
 # "all" is a concatenation of the "all" targets from all the included
