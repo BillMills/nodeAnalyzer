@@ -8,9 +8,11 @@ and
 http://howtonode.org/hello-node
 
 After installing node, the simplest (and probably most useful) example is in callAbin.js.  Just start the server:
+
 node callAbin.js
 
 then visit the URL
+
 http://localhost:8000/?command=a.out
 
 with a.out replaced with your executable.  Output should appear in the bowser.
