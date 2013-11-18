@@ -22,7 +22,9 @@ The example C++ code lives in hello.cc.  A single method called Method is decalr
 To see it go, check the package out and in its root directory, do
 
 node-gyp configure
+
 node-gyp build
+
 node hellowurld.js
 
 Then go visit
