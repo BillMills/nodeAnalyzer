@@ -1,10 +1,10 @@
-var http = require('http'),
-	url = require('url'),
-	spawn = require('child_process').spawn,
-    analyzer = spawn('a.out', [], 'pipe'),
+var http = require('http'),  					//for building the server
+	url = require('url'),						//for scraping the URL
+	spawn = require('child_process').spawn,		//for making a child process
+    analyzer = spawn('a.out', [], 'pipe'),		//starting the child, and piping stdin/our/err
 	server, queryData;
 
-// Scrape a couple parameters out of the query string, pass them to C++, and print the return plus some other stuff to the DOM:
+// define server response:
 server = http.createServer(function (request, response) {
 	//parse query string
 	queryData = url.parse(request.url, true).query;
