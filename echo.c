@@ -5,10 +5,12 @@ using namespace std;
 
 int main ()
 {
+  int j = 0;
+  int i;
   while(true){
-    int i;
     cin >> i;
-    cout << i*2;
+    j++;
+    cout << j;
   }
 
   return 0;
