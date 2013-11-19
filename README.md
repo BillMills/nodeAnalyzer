@@ -7,7 +7,20 @@ http://nodejs.org/api/addons.html
 and
 http://howtonode.org/hello-node
 
-After installing node, the simplest (and probably most useful) example is in callAbin.js.  Just start the server:
+Open Connection Pointing at a Process
+============
+1.  Make yourself an executable called a.out that waits for input at stdin, and then prints something on stdout.  echo.c is proveded for this purpose.
+2.  Start the server with: node openCxn
+3.  visit the URL: http://localhost:8000/?input=40
+
+And the URL should be posting the output to stdout from your executable.  a.out should launch and die with the server, and remain live regardless of client actions.
+
+Hopefully this will be the most appropriate solution.  Previous attempts included before for posterity.
+
+
+Single-Execution round trip
+============
+After installing node, the simplest (and probably most useful) example is in callAbin.js, which will take a URL command, run it on the command line on the server, and post whatever went to stdout back to the browser.  Make yourself a hello world called a.out, and start the server:
 
 node callAbin.js
 
